@@ -1,0 +1,30 @@
+from distutils.core import setup, Extension
+
+x11kvs_hash_module = Extension('x11kvs_hash',
+                               sources = ['x11kvsmodule.c',
+                                          'x11kvshash.c',
+										  'sha3/blake.c',
+										  'sha3/bmw.c',
+										  'sha3/groestl.c',
+										  'sha3/jh.c',
+										  'sha3/keccak.c',
+										  'sha3/skein.c',
+										  'sha3/cubehash.c',
+										  'sha3/echo.c',
+										  'sha3/luffa.c',
+										  'sha3/simd.c',
+										  'sha3/shavite.c',
+										  'sha3/hamsi.c',
+										  'sha3/hamsi_helper.c',
+										  'sha3/fugue.c',
+										  'sha3/sha256.c'],
+                               include_dirs=['.', './sha3'])
+
+setup (name = 'x11kvs_hash',
+       version = '1.0',
+	   author = 'Trader88',
+       author_email = 'ttrader88@mail.ru',
+       description = 'Binding for Skyrcoin x11pvs proof of work hashing.',
+       url = 'https://github.com/github.com/DiplexSoftfork/X11KVS-hash',
+       download_url = 'https://github.com/github.com/DiplexSoftfork/X11KVS-hash.zip',
+       ext_modules = [x11kvs_hash_module])
