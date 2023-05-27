@@ -1,3 +1,4 @@
+#define PY_SSIZE_T_CLEAN //Fixes Python3.10 error "SystemError: PY_SSIZE_T_CLEAN macro must be defined for '#' formats"
 #include <Python.h>
 
 #include "x11kvshash.h"
